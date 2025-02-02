@@ -16,7 +16,7 @@ const Dashboard = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5001/preview', {
+      const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/preview', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Dashboard = () => {
       setDownloadSuccess(false);
       setDownloadProgress(0);
 
-      const response = await fetch('http://localhost:5001/download', {
+      const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/download', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
