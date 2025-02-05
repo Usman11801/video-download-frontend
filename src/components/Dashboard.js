@@ -16,7 +16,9 @@ const Dashboard = () => {
     setError('');
 
     try {
-      const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/preview', {
+const response = await fetch('http://104.248.229.92/preview', {
+
+      // const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/preview', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +48,9 @@ const Dashboard = () => {
       setDownloadSuccess(false);
       setDownloadProgress(0);
 
-      const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/download', {
+      // const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/download', {
+            const response = await fetch('http://104.248.229.92/download', {
+// http://104.248.229.92/
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,7 +83,7 @@ const Dashboard = () => {
 
               if (data.completed && data.fileId) {
                 // Trigger file download
-                window.location.href = `http://localhost:5001/download-file/${data.fileId}`;
+                window.location.href = `http://104.248.229.92/download-file/${data.fileId}`;
                 setDownloadSuccess(true);
                 setTimeout(() => {
                   setDownloadSuccess(false);
