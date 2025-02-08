@@ -16,7 +16,7 @@ const Dashboard = () => {
     setError('');
 
     try {
-const response = await fetch('https://nowatermark.io/preview', {
+const response = await fetch('https://nowatermark.io/api/preview', {
 
       // const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/preview', {
         method: 'POST',
@@ -49,7 +49,7 @@ const response = await fetch('https://nowatermark.io/preview', {
       setDownloadProgress(0);
 
       // const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/download', {
-            const response = await fetch('https://nowatermark.io/download', {
+            const response = await fetch('https://nowatermark.io/api/download', {
 // http://104.248.229.92/
         method: 'POST',
         headers: {
@@ -83,7 +83,7 @@ const response = await fetch('https://nowatermark.io/preview', {
 
               if (data.completed && data.fileId) {
                 // Trigger file download
-                window.location.href = `https://nowatermark.io/download-file/${data.fileId}`;
+                window.location.href = `https://nowatermark.io/api/download-file/${data.fileId}`;
                 setDownloadSuccess(true);
                 setTimeout(() => {
                   setDownloadSuccess(false);
