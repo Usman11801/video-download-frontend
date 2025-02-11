@@ -16,7 +16,7 @@ const Dashboard = () => {
     setError('');
 
     try {
-const response = await fetch('https://nowatermark.io/api/preview', {
+const response = await fetch('https://www.nowatermark.io/api/preview', {
 
       // const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/preview', {
         method: 'POST',
@@ -49,7 +49,7 @@ const response = await fetch('https://nowatermark.io/api/preview', {
       setDownloadProgress(0);
 
       // const response = await fetch('https://video-downlaod-backend-mmkd.vercel.app/api/download', {
-            const response = await fetch('https://nowatermark.io/api/download', {
+            const response = await fetch('https://www.nowatermark.io/api/download', {
 // http://104.248.229.92/
         method: 'POST',
         headers: {
@@ -83,7 +83,7 @@ const response = await fetch('https://nowatermark.io/api/preview', {
 
               if (data.completed && data.fileId) {
                 // Trigger file download
-                window.location.href = `https://nowatermark.io/api/download-file/${data.fileId}`;
+                window.location.href = `https://www.nowatermark.io/api/download-file/${data.fileId}`;
                 setDownloadSuccess(true);
                 setTimeout(() => {
                   setDownloadSuccess(false);
@@ -114,7 +114,7 @@ const response = await fetch('https://nowatermark.io/api/preview', {
             type="text"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="Paste Instagram, YouTube or TikTok URL"
+            placeholder="Paste Instagram or TikTok URL"
             className="url-input"
           />
           <button type="submit" className="preview-btn">
